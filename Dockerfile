@@ -44,10 +44,10 @@ RUN $url = ('https://github.com/ojdkbuild/ojdkbuild/releases/download/{0}/{1}' -
 
 
 RUN mkdir C:/source
-COPY docgenerationpackv6-6.29.1.0-java.jar C:/source/
+COPY docgenerationpackv6-6.X.Y-java.jar C:/source/
 WORKDIR C:/source
-RUN java -jar docgenerationpackv6-6.29.1.0-java.jar -solname'DocPath DocGeneration Engine Pack v6' -install -solution'C:\DocPath\DocGeneration Pack 6' -silentmode -console -licserverpath'C:\DocPath\DocPath License Server' -licserverport1765
-COPY DocPathDocGenerationEnginePack_TEMP_DOCPATH_20200401.lic C:/DocPath/Licenses/
+RUN java -jar docgenerationpackv6-6.X.Y-java.jar -solname'DocPath DocGeneration Engine Pack v6' -install -solution'C:\DocPath\DocGeneration Pack 6' -silentmode -console -licserverpath'C:\DocPath\DocPath License Server' -licserverport1765
+COPY DocPath_License_File.lic C:/DocPath/Licenses/
 COPY run.ps1 C:/DocPath/
 
 EXPOSE 8084
