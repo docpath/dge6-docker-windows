@@ -19,3 +19,21 @@ To successfully perform the example follow the steps as indicated below:
 ## Necessary changes
 - Change the docgenerationpackv6-6.X.Y.-java.jar with the corresponding version of DocPath ® DocGeneration Engine 6.
 - Change the DocPath_License_File.lic file with the corresponding license filename.
+
+## How to build and deploy
+Now we are going to build the container by executing the following sequence in the same directory where the dockerfile file is located:
+
+`docker build -t docpath/dge . `
+
+**IMPORTANT!** the full stop at the end indicates the directory where the container is located, this is mandatory.
+
+Run the container once it has been built, use the following sequence:
+
+`docker run --name dge --hostname <hostname_contenedor> --detach -p 8084:8084 docpath/dge`
+
+The used parameters are:
+- --name: this parameter indicates the name of the container, in this case dge.
+- --hostname: this parameter indicates the hostname of the machine with license.
+- --detach: this parameter indicates that no messages are displayed in the execution console, silent mode.
+- -p8084:8084: this parameter indicates the port of both host machine and dge.
+- docpath/dge: this is the name assigned previously while building the container.
